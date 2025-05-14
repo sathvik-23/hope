@@ -14,19 +14,20 @@ A voice-based conversational agent built using the Agno agentic framework. This 
 
 ```
 .
-├── src/
-│   ├── agents/
-│   │   └── voice_agent.py
-│   ├── core/
-│   │   └── base_agent.py
-│   ├── config/
-│   │   └── config.py
-│   └── main.py
-├── tests/
-├── audio/
-│   ├── input/
-│   └── output/
-├── requirements.txt
+├── backend/
+│   ├── src/
+│   │   ├── agents/
+│   │   │   └── voice_agent.py
+│   │   ├── core/
+│   │   │   └── base_agent.py
+│   │   ├── config/
+│   │   │   └── config.py
+│   │   └── main.py
+│   ├── tests/
+│   ├── audio/
+│   │   ├── input/
+│   │   └── output/
+│   └── requirements.txt
 └── README.md
 ```
 
@@ -35,6 +36,7 @@ A voice-based conversational agent built using the Agno agentic framework. This 
 1. Create a virtual environment:
 
    ```bash
+   cd backend
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
@@ -45,7 +47,7 @@ A voice-based conversational agent built using the Agno agentic framework. This 
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file with the following variables:
+3. Create a `.env` file in the backend directory with the following variables:
    ```
    GEMINI_API_KEY=your_gemini_api_key
    MONGODB_URI=your_mongodb_uri
@@ -55,12 +57,13 @@ A voice-based conversational agent built using the Agno agentic framework. This 
 
 ## Usage
 
-1. Place your input audio file in the `audio/input` directory
+1. Place your input audio file in the `backend/audio/input` directory
 2. Run the main script:
    ```bash
+   cd backend
    python src/main.py
    ```
-3. The processed audio response will be saved in the `audio/output` directory
+3. The processed audio response will be saved in the `backend/audio/output` directory
 
 ## Development
 
@@ -74,6 +77,7 @@ A voice-based conversational agent built using the Agno agentic framework. This 
 Run tests using pytest:
 
 ```bash
+cd backend
 pytest tests/
 ```
 
